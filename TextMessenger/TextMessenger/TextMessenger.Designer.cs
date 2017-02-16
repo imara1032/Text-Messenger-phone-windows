@@ -35,13 +35,13 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.newAccount = new System.Windows.Forms.LinkLabel();
-            this.Phonenumber = new System.Windows.Forms.TextBox();
-            this.passeord = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.remember = new System.Windows.Forms.CheckBox();
             this.signIn = new System.Windows.Forms.Button();
+            this.remember = new System.Windows.Forms.CheckBox();
+            this.password = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.Phonenumber = new System.Windows.Forms.TextBox();
+            this.newAccount = new System.Windows.Forms.LinkLabel();
+            this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -77,6 +77,7 @@
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
@@ -89,14 +90,14 @@
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.aboutToolStripMenuItem.Text = "About";
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.signIn);
             this.panel1.Controls.Add(this.remember);
-            this.panel1.Controls.Add(this.passeord);
+            this.panel1.Controls.Add(this.password);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.Phonenumber);
             this.panel1.Controls.Add(this.newAccount);
@@ -106,38 +107,32 @@
             this.panel1.Size = new System.Drawing.Size(250, 335);
             this.panel1.TabIndex = 1;
             // 
-            // label1
+            // signIn
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(26, 40);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(81, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Phone Number:";
+            this.signIn.Location = new System.Drawing.Point(96, 177);
+            this.signIn.Name = "signIn";
+            this.signIn.Size = new System.Drawing.Size(75, 23);
+            this.signIn.TabIndex = 6;
+            this.signIn.Text = "Sign In";
+            this.signIn.UseVisualStyleBackColor = true;
             // 
-            // newAccount
+            // remember
             // 
-            this.newAccount.AutoSize = true;
-            this.newAccount.Location = new System.Drawing.Point(65, 271);
-            this.newAccount.Name = "newAccount";
-            this.newAccount.Size = new System.Drawing.Size(98, 13);
-            this.newAccount.TabIndex = 1;
-            this.newAccount.TabStop = true;
-            this.newAccount.Text = "Get a new account";
+            this.remember.AutoSize = true;
+            this.remember.Location = new System.Drawing.Point(29, 131);
+            this.remember.Name = "remember";
+            this.remember.Size = new System.Drawing.Size(217, 17);
+            this.remember.TabIndex = 5;
+            this.remember.Text = "Remember phone number and password";
+            this.remember.UseVisualStyleBackColor = true;
+            this.remember.CheckedChanged += new System.EventHandler(this.remember_CheckedChanged);
             // 
-            // Phonenumber
+            // password
             // 
-            this.Phonenumber.Location = new System.Drawing.Point(29, 56);
-            this.Phonenumber.Name = "Phonenumber";
-            this.Phonenumber.Size = new System.Drawing.Size(142, 20);
-            this.Phonenumber.TabIndex = 2;
-            // 
-            // passeord
-            // 
-            this.passeord.Location = new System.Drawing.Point(29, 104);
-            this.passeord.Name = "passeord";
-            this.passeord.Size = new System.Drawing.Size(142, 20);
-            this.passeord.TabIndex = 4;
+            this.password.Location = new System.Drawing.Point(29, 104);
+            this.password.Name = "password";
+            this.password.Size = new System.Drawing.Size(142, 20);
+            this.password.TabIndex = 4;
             // 
             // label2
             // 
@@ -149,24 +144,32 @@
             this.label2.Text = "Password:";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
-            // remember
+            // Phonenumber
             // 
-            this.remember.AutoSize = true;
-            this.remember.Location = new System.Drawing.Point(29, 131);
-            this.remember.Name = "remember";
-            this.remember.Size = new System.Drawing.Size(217, 17);
-            this.remember.TabIndex = 5;
-            this.remember.Text = "Remember phone number and password";
-            this.remember.UseVisualStyleBackColor = true;
+            this.Phonenumber.Location = new System.Drawing.Point(29, 56);
+            this.Phonenumber.Name = "Phonenumber";
+            this.Phonenumber.Size = new System.Drawing.Size(142, 20);
+            this.Phonenumber.TabIndex = 2;
             // 
-            // signIn
+            // newAccount
             // 
-            this.signIn.Location = new System.Drawing.Point(96, 177);
-            this.signIn.Name = "signIn";
-            this.signIn.Size = new System.Drawing.Size(75, 23);
-            this.signIn.TabIndex = 6;
-            this.signIn.Text = "Sign In";
-            this.signIn.UseVisualStyleBackColor = true;
+            this.newAccount.AutoSize = true;
+            this.newAccount.Location = new System.Drawing.Point(65, 271);
+            this.newAccount.Name = "newAccount";
+            this.newAccount.Size = new System.Drawing.Size(98, 13);
+            this.newAccount.TabIndex = 1;
+            this.newAccount.TabStop = true;
+            this.newAccount.Text = "Get a new account";
+            this.newAccount.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.newAccount_LinkClicked);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(26, 40);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(81, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Phone Number:";
             // 
             // TextMessenger
             // 
@@ -197,7 +200,7 @@
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox passeord;
+        private System.Windows.Forms.TextBox password;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox Phonenumber;
         private System.Windows.Forms.LinkLabel newAccount;

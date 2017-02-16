@@ -30,14 +30,14 @@
         {
             this.confirm = new System.Windows.Forms.Button();
             this.grbRequestCode = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.phoneNumber = new System.Windows.Forms.TextBox();
-            this.name = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.request = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.name = new System.Windows.Forms.TextBox();
+            this.phoneNumber = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.code = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.code = new System.Windows.Forms.TextBox();
             this.grbRequestCode.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -50,6 +50,7 @@
             this.confirm.TabIndex = 0;
             this.confirm.Text = "Confirm";
             this.confirm.UseVisualStyleBackColor = true;
+            this.confirm.Click += new System.EventHandler(this.confirm_Click);
             // 
             // grbRequestCode
             // 
@@ -65,29 +66,15 @@
             this.grbRequestCode.TabStop = false;
             this.grbRequestCode.Text = "Step 1: Request Code";
             // 
-            // label1
+            // request
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(0, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(84, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Phone Number: ";
-            // 
-            // phoneNumber
-            // 
-            this.phoneNumber.Location = new System.Drawing.Point(90, 19);
-            this.phoneNumber.Name = "phoneNumber";
-            this.phoneNumber.Size = new System.Drawing.Size(139, 20);
-            this.phoneNumber.TabIndex = 1;
-            this.phoneNumber.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // name
-            // 
-            this.name.Location = new System.Drawing.Point(90, 55);
-            this.name.Name = "name";
-            this.name.Size = new System.Drawing.Size(139, 20);
-            this.name.TabIndex = 2;
+            this.request.Location = new System.Drawing.Point(234, 81);
+            this.request.Name = "request";
+            this.request.Size = new System.Drawing.Size(75, 23);
+            this.request.TabIndex = 4;
+            this.request.Text = "Request";
+            this.request.UseVisualStyleBackColor = true;
+            this.request.Click += new System.EventHandler(this.request_Click);
             // 
             // label2
             // 
@@ -99,14 +86,29 @@
             this.label2.Text = "Full Name:";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
-            // request
+            // name
             // 
-            this.request.Location = new System.Drawing.Point(234, 81);
-            this.request.Name = "request";
-            this.request.Size = new System.Drawing.Size(75, 23);
-            this.request.TabIndex = 4;
-            this.request.Text = "Request";
-            this.request.UseVisualStyleBackColor = true;
+            this.name.Location = new System.Drawing.Point(90, 55);
+            this.name.Name = "name";
+            this.name.Size = new System.Drawing.Size(139, 20);
+            this.name.TabIndex = 2;
+            // 
+            // phoneNumber
+            // 
+            this.phoneNumber.Location = new System.Drawing.Point(90, 19);
+            this.phoneNumber.Name = "phoneNumber";
+            this.phoneNumber.Size = new System.Drawing.Size(139, 20);
+            this.phoneNumber.TabIndex = 1;
+            this.phoneNumber.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(0, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(84, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Phone Number: ";
             // 
             // groupBox1
             // 
@@ -120,13 +122,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Step 2: Confirm Code";
             // 
-            // code
-            // 
-            this.code.Location = new System.Drawing.Point(90, 31);
-            this.code.Name = "code";
-            this.code.Size = new System.Drawing.Size(139, 20);
-            this.code.TabIndex = 1;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -135,6 +130,13 @@
             this.label3.Size = new System.Drawing.Size(61, 13);
             this.label3.TabIndex = 2;
             this.label3.Text = "SMS Code:";
+            // 
+            // code
+            // 
+            this.code.Location = new System.Drawing.Point(90, 31);
+            this.code.Name = "code";
+            this.code.Size = new System.Drawing.Size(139, 20);
+            this.code.TabIndex = 1;
             // 
             // FirmRegister
             // 
