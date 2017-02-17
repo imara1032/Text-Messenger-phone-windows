@@ -60,6 +60,7 @@
     <Compile Include="FirmRegister.Designer.cs">
       <DependentUpon>FirmRegister.cs</DependentUpon>
     </Compile>
+    <Compile Include="Globals.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="TextMessenger.cs">
       <SubType>Form</SubType>

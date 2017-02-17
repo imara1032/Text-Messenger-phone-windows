@@ -41,11 +41,26 @@ namespace TextMessenger
                 return;
             }
             if (WhatsAppApi.Register.WhatsRegisterV2.RequestCode(phoneNumber.Text,out password, "sms")) {
+
             }
         }
         private void save() {
             this.grbRequestCode.Enabled = false;
             this.grbConfirmCode.Enabled = false;
+            Properties.Settings.Default.PhoneNumber = phoneNumber.Text;
+            Properties.Settings.Default.Password = password;
+            Properties.Settings.Default.FullName = name.Text;
+            Properties.Settings.Default.Save();
+           // if (Globals.DB.Account.FindByAccountId(phoneNumber.Text) == null) {
+                AppData.AccountRow row = Globals.DB.Account.NewAccountRow();
+                row.AccountId = phoneNumber.Text;
+                row.FullName = name.Text;
+                row.password = password;
+                Globals.DB.Account.AddAccountRow(row);
+                Globals.DB.Account.AcceptChanges();
+                Globals.DB.Account.WriteXml(string.Format("{0}\\accounts.dat", Application.StartupPath));
+            //  }
+            DialogResult = System.Windows.Forms.DialogResult.OK;
         }
 
 
