@@ -35,11 +35,11 @@
             this.name = new System.Windows.Forms.TextBox();
             this.phoneNumber = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.grbConfirmCode = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
             this.code = new System.Windows.Forms.TextBox();
             this.grbRequestCode.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.grbConfirmCode.SuspendLayout();
             this.SuspendLayout();
             // 
             // confirm
@@ -110,17 +110,17 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Phone Number: ";
             // 
-            // groupBox1
+            // grbConfirmCode
             // 
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.code);
-            this.groupBox1.Controls.Add(this.confirm);
-            this.groupBox1.Location = new System.Drawing.Point(12, 147);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(315, 100);
-            this.groupBox1.TabIndex = 2;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Step 2: Confirm Code";
+            this.grbConfirmCode.Controls.Add(this.label3);
+            this.grbConfirmCode.Controls.Add(this.code);
+            this.grbConfirmCode.Controls.Add(this.confirm);
+            this.grbConfirmCode.Location = new System.Drawing.Point(12, 147);
+            this.grbConfirmCode.Name = "grbConfirmCode";
+            this.grbConfirmCode.Size = new System.Drawing.Size(315, 100);
+            this.grbConfirmCode.TabIndex = 2;
+            this.grbConfirmCode.TabStop = false;
+            this.grbConfirmCode.Text = "Step 2: Confirm Code";
             // 
             // label3
             // 
@@ -143,14 +143,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(339, 258);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.grbConfirmCode);
             this.Controls.Add(this.grbRequestCode);
             this.Name = "FirmRegister";
             this.Text = "Register";
             this.grbRequestCode.ResumeLayout(false);
             this.grbRequestCode.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.grbConfirmCode.ResumeLayout(false);
+            this.grbConfirmCode.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -164,7 +164,7 @@
         private System.Windows.Forms.Button request;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox name;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox grbConfirmCode;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox code;
     }

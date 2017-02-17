@@ -43,6 +43,11 @@ namespace TextMessenger
             if (WhatsAppApi.Register.WhatsRegisterV2.RequestCode(phoneNumber.Text,out password, "sms")) {
             }
         }
+        private void save() {
+            this.grbRequestCode.Enabled = false;
+            this.grbConfirmCode.Enabled = false;
+        }
+
 
         private void confirm_Click(object sender, EventArgs e)
         {
